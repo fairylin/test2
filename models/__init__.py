@@ -3,6 +3,7 @@ import time
 from utils import log
 
 
+
 def save(data, path):
     """
     data 是 dict 或者 list
@@ -17,7 +18,6 @@ def save(data, path):
 def load(path):
     with open(path, 'r', encoding='utf-8') as f:
         s = f.read()
-        # log('load', s)
         return json.loads(s)
 
 
@@ -52,6 +52,14 @@ class Model(object):
             # 假设 k v 分别是 'name'  'gua'
             # 它相当于 m.name = 'gua'
             setattr(m, k, v)
+        return m
+
+    @classmethod
+    def new(cls, form):
+        """"
+        """
+        m = cls(form)
+        m.save()
         return m
 
     @classmethod

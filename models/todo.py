@@ -12,6 +12,8 @@ D delete 删除数据
 
 Todo.new() 来创建一个 todo
 """
+
+
 class Todo(Model):
     @classmethod
     def new(cls, form):
@@ -63,7 +65,12 @@ class Todo(Model):
         self.ut = self.ct
 
     def time(self):
-        format = '%y-%m-%d %H:%M:%S'
+        """
+        print(value) # 1554132451
+        print(dt)   # time.struct_time(tm_year=2019, tm_mon=4, tm_mday=1, tm_hour=15, tm_min=27, tm_sec=31, tm_wday=0, tm_yday=91, tm_isdst=0)
+        print(time.strftime(format, dt)) # 15:27:31
+        """
+        format_time = '%y-%m-%d %H:%M:%S'
         value = self.ct
         dt = time.gmtime(value)
-        return time.strftime(format, dt)
+        return time.strftime(format_time, dt)
