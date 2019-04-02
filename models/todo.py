@@ -63,7 +63,7 @@ class Todo(Model):
         self.ut = self.ct
 
     def time(self):
-	format = '%H:%M:%S'
-	value = self.ct
-	dt = time.gmtime(value)
-	return time.strftime(format, dt)
+        format = '%y-%m-%d %H:%M:%S'
+        value = self.ct
+        dt = time.gmtime(value)
+        return time.strftime(format, dt)
