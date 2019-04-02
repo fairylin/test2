@@ -3,3 +3,9 @@
 .idea/test2.iml
 .idea/modules.xml
 .idea/vcs.xml
+
+.idea/*
+data/*
+models/__pycache__/*
+routes/__pycache__/*
+__pycache__/*
